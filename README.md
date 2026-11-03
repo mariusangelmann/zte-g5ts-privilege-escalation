@@ -55,12 +55,18 @@ version.
 | Path | Purpose |
 |---|---|
 | `exploit.py` | driver: `check` / `shell` / `status` / `restore` |
+| `adb_lan.py` | expose `adbd` to LAN on `0.0.0.0:5555` (`enable` / `disable` / `status`) |
 | `rl.py` | ubus JSON-RPC transport + login (`rl.SESS` = live session) |
 | `h.py` | helpers: `u` ubus call, `ex` cgi-exec, `dl` download, `up` upload, `shrun` |
 | `revert.sh` | on-device: restore both files + remove all artifacts |
 | `verify.sh` | on-device: enumerate leftovers |
 | `restore/` | pristine `miniupnpd.include.orig`, `firewall.user.orig` |
+| `atcmd.sh` | send AT commands to the modem via root shell (`atcmd.sh "ATI"`, `-f` batch) |
 | `docs/WRITEUP.md` | full technical write-up (root cause, chain, evidence, revert) |
+| `docs/AT_COMMAND_ACCESS.md` | modem AT-command access: transport, usage, observed responses |
+| `docs/NV_ACCESS.md` | modem NV (non-volatile) store: `nv` CLI, `AT+ZSET`, observed items |
+| `docs/USB_DIAG_ADB.md` | USB factory/debug modes, Qualcomm DIAG & ADB access paths |
+| `docs/ADB_LAN_FORWARD.md` | expose `adbd` on `0.0.0.0:5555` + bypass `/bin/adb_shell` gate (script: `adb_lan.py`) |
 
 ## Reproduce
 
